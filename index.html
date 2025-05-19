@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Bedrock Glyph Tool</title>
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Minecraft Bedrock Glyph Tool</h1>
+            <button class="theme-toggle" id="themeToggle">🌓</button>
+        </header>
+        <div class="upload-section" id="uploadSection">
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">📁</div>
+                <div class="upload-text">
+                    <h2>Upload Glyph Image</h2>
+                    <p>Drag & drop your glyph image here or click to browse</p>
+                </div>
+                <input type="file" id="fileInput" class="file-input" accept="image/*">
+                <button class="btn" id="browseBtn">Browse Files</button>
+            </div>
+        </div>
+        <div class="glyph-container" id="glyphContainer">
+            <div class="glyph-header">
+                <div class="glyph-title">Glyph Preview</div>
+                <div class="glyph-info" id="glyphInfo"></div>
+            </div>
+            <div class="glyph-grid" id="glyphGrid"></div>
+        </div>
+        <div class="instructions">
+            <h2>How to Use</h2>
+            <p>1. Upload a glyph image (e.g., glyph_E1.png) from your Minecraft resource pack.</p>
+            <p>2. The image will be divided into a 16×16 grid of glyphs.</p>
+            <p>3. Click on any glyph to copy its Unicode character to clipboard.</p>
+            <p>4. Use the copied Unicode in your Minecraft text components.</p>
+
+            <h2 style="margin-top: 1.5rem;">Format Explained</h2>
+            <p>The Unicode format is <code>\uE1A2</code> where:</p>
+            <p>- <code>E1</code> comes from the glyph filename (glyph_E1.png)</p>
+            <p>- <code>A2</code> is the grid position (A = column 10, 2 = row 2)</p>
+            <p>First square is <code>00</code>, then <code>01</code>...<code>0F</code>, then <code>10</code>...<code>FF</code>.</p>
+        </div>
+    </div>
+
+    <footer>
+        Minecraft Bedrock Glyph Tool - Not affiliated with Mojang or Microsoft
+    </footer>
+
+    <div class="notification" id="notification">
+        <span>✅</span>
+        <span>Copied to clipboard!</span>
+    </div>
+
+    <script src="js/theme.js"></script>
+    <script src="js/glyph.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
